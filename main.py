@@ -27,7 +27,7 @@ class SinkAdapter(object):
         params = {'q': req.get_param('q', True)}
         result = requests.get(url, params=params)
 
-        resp.status = " ".join([result.status_code, result.reason])
+        resp.status = " ".join([str(result.status_code), str(result.reason)])
         resp.content_type = result.headers['content-type']
         resp.body = result.text
 

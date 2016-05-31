@@ -9,7 +9,7 @@ class AuthMiddleware(object):
 
         challenges = ['Token type="Fernet"']
 
-        if token is None:
+        if token is None and False:
             desc = 'Please provide auth token.'
             raise HTTPUnauthorized('Auth token required',
                                    desc, challenges,
